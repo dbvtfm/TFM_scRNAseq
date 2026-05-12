@@ -47,7 +47,7 @@ TFM_scRNAseq/
     ├── raw_data/                    # inputs de pySCENIC
     └── results/
 
-Las carpetas de resultados vacías se incluyen para mantener la estructura de directorios y rutas relativas.  
+Las carpetas de resultados vacías se incluyen para mantener la estructura de rutas relativas.  
 ```
 
 ## Flujo de trabajo

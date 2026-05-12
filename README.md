@@ -72,6 +72,5 @@ Las carpetas de resultados vacías se incluyen para mantener la estructura de ru
 Scripts auxiliares o fuera del flujo:
 - 00_benchmark_int_clust.R
 - 00_benchmark_ann_cell.R
-- celltypist.ipynb
 - figuras_GSEA.R
 - wordcloud_tfm.R

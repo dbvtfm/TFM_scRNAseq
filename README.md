@@ -14,14 +14,14 @@ El proyecto reanaliza y amplía el estudio del dataset público **GSE210824 / PR
 
 ## Otros datos externos necesarios
 
-- barcode whitelist (a ubicar en 01_Seurat/Raw/): https://teichlab.github.io/scg_lib_structs/data/10X-Genomics/translation_3M-february-2018.txt.gz
-- referencia PBMC multimodal (a ubicar en 01_Seurat/Ann/): https://zenodo.org/records/7779017/files/pbmc_multimodal_2023.rds
-- atlas CD4 (a unbicar en 01_Seurat/Ann/screfmapping): https://github.com/yyoshiaki/screfmapping
+- referencia PBMC multimodal (ubicar en 01_Seurat/Ann/): https://zenodo.org/records/7779017/files/pbmc_multimodal_2023.rds
+- atlas CD4 (ubicar en 01_Seurat/Ann/screfmapping): https://github.com/yyoshiaki/screfmapping
     - screfmapping/data/cache_symphony_sct.uwot
     - screfmapping/data/ref_Reference_Mapping_20220525.RData (https://doi.org/10.6084/m9.figshare.25052648)
     - screfmapping/utils_seurat.R
     - screfmapping/ref_mapping_seuratobj.R
-- ranking genómico de motivos cis-reguladores (a ubicar en 02_pySCENIC/aux_data/): https://resources.aertslab.org/cistarget/databases/old/homo_sapiens/hg38/refseq_r80/mc9nr/gene_based/hg38__refseq-r80__10kb_up_and_down_tss.mc9nr.feather
+- ranking genómico de motivos cis-reguladores (ubicar en 02_pySCENIC/aux_data/): https://resources.aertslab.org/cistarget/databases/old/homo_sapiens/hg38/refseq_r80/mc9nr/gene_based/hg38__refseq-r80__10kb_up_and_down_tss.mc9nr.feather
+- barcode whitelist (ubicar en 01_Seurat/Raw/): https://teichlab.github.io/scg_lib_structs/data/10X-Genomics/translation_3M-february-2018.txt.gz
 
 ## Datos procesados aportados
 
@@ -57,19 +57,21 @@ Las carpetas de resultados vacías se incluyen para mantener la estructura de ru
 ## Orden de ejecución de código
 
 01_Seurat/Code/
-- 01_data_prep_and_QC.R (-> aquí ya se puede iniciar la inferencia de GRN en pySCENIC en paralelo)
-- 02_scRNAseq_basic_v2.R (usa MAST y ranking score para marcadores. Wilcoxon por % células expresoras en 02_scRNAseq_basic_v1.R)
+- 01_data_prep_and_QC.R (-> aquí ya se puede iniciar pySCENIC y celltypist)
+- 02_scRNAseq_basic_v2.R (usa MAST y ranking score para marcadores. Wilcoxon en 02_scRNAseq_basic_v1.R)
 - 03a_ann_cell_auto.R
 - 3b_ann_clust_gsea.R (-> aquí ya se puede integrar las anotaciones con la libreta 2 de pySCENIC)
 - 04_cell_abundance.R y 05_DGE.R
   
-02_pySCENIC/analysis
+02_pySCENIC/analysis/
+- (comandos de pySCENIC en bash / celltypist.ipynb)
 - 01_complete_pyscenic_outputs.ipynb
 - 02_integrate_pyscenic_with_seurat.ipynb
 - 03_regulon_analysis.ipynb
 
-Scripts auxiliares, fuera del flujo:
+Scripts auxiliares o fuera del flujo:
 - 00_benchmark_int_clust.R
 - 00_benchmark_ann_cell.R
+- celltypist.ipynb
 - figuras_GSEA.R
 - wordcloud_tfm.R

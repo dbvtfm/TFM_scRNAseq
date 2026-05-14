@@ -60,7 +60,7 @@ Las carpetas de resultados vacías se incluyen para mantener la estructura de ru
 - 01_data_prep_and_QC.R (-> aquí ya se puede iniciar pySCENIC y celltypist)
 - 02_scRNAseq_basic_v2.R (usa MAST y ranking score para marcadores. Wilcoxon en 02_scRNAseq_basic_v1.R)
 - 03a_ann_cell_auto.R
-- 3b_ann_clust_gsea.R (-> aquí ya se puede integrar las anotaciones con la libreta 2 de pySCENIC)
+- 03b_ann_clust_gsea.R (-> aquí ya se puede integrar las anotaciones con la libreta 2 de pySCENIC)
 - 04_cell_abundance.R y 05_DGE.R
   
 02_pySCENIC/analysis/
